@@ -1,0 +1,3 @@
+com\eMart\persistence\dao\BaseDao.class
+com\eMart\controller\rest\Result.class
+com\eMart\persistence\service\BaseService.class
