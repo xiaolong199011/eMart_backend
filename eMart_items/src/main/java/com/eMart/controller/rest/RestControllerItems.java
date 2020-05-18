@@ -15,7 +15,7 @@ import com.eMart.persistence.entity.Items;
 import com.eMart.persistence.service.ItemsService;
 
 @RestController
-@RequestMapping("/items")
+@RequestMapping("/item")
 public class RestControllerItems {
 	
 	@Autowired

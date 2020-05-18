@@ -2,11 +2,11 @@ package com.eMart.model;
 
 public class BaseResponse {
 
-    private long id;
-	
-    private long errornum;
-     
-    private String errormsg;
+	private long id;
+
+	private long errornum;
+
+	private String errormsg;
 
 	public long getId() {
 		return id;
@@ -31,7 +31,5 @@ public class BaseResponse {
 	public void setErrormsg(String errormsg) {
 		this.errormsg = errormsg;
 	}
-    
-    
 
 }

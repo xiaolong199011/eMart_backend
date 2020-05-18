@@ -1,23 +1,20 @@
 package com.eMart.model;
 
-
 import java.util.Date;
 
-
-
 public class User {
-	
-    private long id;
 
-    private String username;
+	private long id;
 
-    private String password;
+	private String username;
 
-    private String email;
+	private String password;
 
-    private String role;
-    
-    private Date lastlogintime;
+	private String email;
+
+	private String role;
+
+	private Date lastlogintime;
 
 	public long getId() {
 		return id;
@@ -66,12 +63,5 @@ public class User {
 	public void setLastlogintime(Date lastlogintime) {
 		this.lastlogintime = lastlogintime;
 	}
-
-
-
-
-
-    
-
 
 }

@@ -16,6 +16,8 @@
 		<module>eMart_user</module>
 		<module>eMart_eureka</module>
 		<module>eMart_order</module>
+		<module>eMart_zuul</module>
+		<module>eMart_feign</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

@@ -1,23 +1,20 @@
 package com.eMart.persistence.service;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.eMart.model.User;
 import com.eMart.model.UserResponse;
 import com.eMart.persistence.dao.BaseDao;
-import com.eMart.persistence.dao.BuyerDao;
 import com.eMart.persistence.dao.UserDao;
 import com.eMart.persistence.entity.Buyer;
 import com.eMart.persistence.entity.Seller;
 import com.eMart.persistence.service.BaseService;
-//import com.eMart.untils.Constants;
-//import com.eMart.untils.JwtUtil;
+import com.eMart.JWT.untils.Constants;
+import com.eMart.JWT.untils.JwtUtil;
 
 @Service("userService")
 @Transactional
@@ -49,7 +46,7 @@ public class UserService extends BaseService{
 		String username = user.getUsername();
 		String password = user.getPassword();
 
-		//user.setLastLoginTime(new Date());
+		user.setLastlogintime(new Date());
 
 		// TODO 检验参数的完整性
 
@@ -67,8 +64,8 @@ public class UserService extends BaseService{
 				buyer.setLastlogintime(new Date());
 
 				if (!buyer.getPassword().equals(password)) {
-//					userResponse.setErrornum(Constants.ERR_NUM_PWD_ERR);
-//					userResponse.setErrormsg(Constants.ERR_MSG_PWD_ERR);
+					userResponse.setErrornum(Constants.ERR_NUM_PWD_ERR);
+					userResponse.setErrormsg(Constants.ERR_MSG_PWD_ERR);
 
 					return userResponse;
 				}
@@ -85,8 +82,8 @@ public class UserService extends BaseService{
 					
 					buyerService.save(buyer);
 				} catch (Exception e) {
-//					userResponse.setErrornum(Constants.ERR_NUM_SERVER_ERR);
-//					userResponse.setErrormsg(Constants.ERR_MSG_SERVER_ERR);
+					userResponse.setErrornum(Constants.ERR_NUM_SERVER_ERR);
+					userResponse.setErrormsg(Constants.ERR_MSG_SERVER_ERR);
 					return userResponse;
 				}
 			}
@@ -101,8 +98,8 @@ public class UserService extends BaseService{
 				seller.setLastlogintime(new Date());
 
 				if (!seller.getPassword().equals(password)) {
-//					userResponse.setErrornum(Constants.ERR_NUM_PWD_ERR);
-//					userResponse.setErrormsg(Constants.ERR_MSG_PWD_ERR);
+					userResponse.setErrornum(Constants.ERR_NUM_PWD_ERR);
+					userResponse.setErrormsg(Constants.ERR_MSG_PWD_ERR);
 
 					return userResponse;
 				}
@@ -116,8 +113,8 @@ public class UserService extends BaseService{
 					seller.setRole(user.getRole());
 					sellerService.save(seller);
 				} catch (Exception e) {
-//					userResponse.setErrornum(Constants.ERR_NUM_SERVER_ERR);
-//					userResponse.setErrormsg(Constants.ERR_MSG_SERVER_ERR);
+					userResponse.setErrornum(Constants.ERR_NUM_SERVER_ERR);
+					userResponse.setErrormsg(Constants.ERR_MSG_SERVER_ERR);
 					return userResponse;
 				}
 			}
@@ -125,11 +122,11 @@ public class UserService extends BaseService{
 			break;
 		}
 
-//		userResponse.setErrornum(Constants.ERR_NUM_OK);
-//		userResponse.setErrormsg(Constants.ERR_MSG_OK);
+		userResponse.setErrornum(Constants.ERR_NUM_OK);
+		userResponse.setErrormsg(Constants.ERR_MSG_OK);
 		userResponse.setUserName(username);
-		// userResponse.setId(id);(user.getId());
-		//userResponse.setToken(JwtUtil.generateToken(username, user.getLastLoginTime()));
+		 //userResponse.setId(id);(user.getId());
+		userResponse.setToken(JwtUtil.generateToken(username, user.getLastlogintime()));
 		
 		return userResponse;
 		

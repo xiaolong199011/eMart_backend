@@ -14,7 +14,7 @@ spring:
       ddl-auto: validate
       dialect: org.hibernate.dialect.MySQL5Dialect
   application:
-    name: order`
+    name: order-service
 
 eureka: 
   instance: 
@@ -24,4 +24,7 @@ eureka:
   client: 
     serviceUrl: 
       defaultZone: http://localhost:8081/eureka
-      
+
+ribbon: 
+   eureka: 
+      enabled: true
