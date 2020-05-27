@@ -15,6 +15,7 @@ import com.eMart.persistence.service.BaseService;
 import com.eMart.persistence.service.TransactionsService;
 import com.eMart.controller.rest.Result;
 import com.eMart.persistence.entity.Transactions;
+import com.eMart.persistence.model.TransactionItemModel;
 
 @RestController
 @RequestMapping("/transactions")
@@ -46,6 +47,23 @@ public class RestControllerTransactions {
 	public Result del(@PathVariable long id) {
 		Object u = getService().findBy(id);		
 		return getService().delete(u);
+	}
+	
+	@RequestMapping(value = "/getcart/{buyerid}", method = RequestMethod.GET)
+	public List<TransactionItemModel> getCart(@PathVariable String buyerid) {
+		//return getService().findByTwoCondition("buyerid", buyerid, "shopcart", "1");
+		return transactionsService.getCart(buyerid);
+	}
+	
+	@RequestMapping(value = "/checkoutcart/{buyerid}", method = RequestMethod.GET)
+	public void checkoutCart(@PathVariable String buyerid) {
+		transactionsService.checkoutCart(buyerid);
+	}
+	
+	@RequestMapping(value = "/purchaseHistory/{buyerid}", method = RequestMethod.GET)
+	public List<TransactionItemModel> purchaseHistory(@PathVariable String buyerid) {
+		return transactionsService.purchaseHistory(buyerid);
+		
 	}
 
 }

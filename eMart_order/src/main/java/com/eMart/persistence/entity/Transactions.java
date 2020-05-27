@@ -24,8 +24,8 @@ public class Transactions implements Serializable{
 	@Column(name = "BUYERID", nullable = false)
 	private long buyerid;
 	
-	@Column(name = "SELLERID", nullable = false)
-	private long sellerid;
+	@Column(name = "SHOPCART", nullable = false)
+	private int shopcart;
 	
 	@Column(name = "ITEMID", nullable = false)
 	private long itemid;
@@ -54,15 +54,15 @@ public class Transactions implements Serializable{
 	public void setBuyerid(long buyerid) {
 		this.buyerid = buyerid;
 	}
-
-	public long getSellerid() {
-		return sellerid;
-	}
-
-	public void setSellerid(long sellerid) {
-		this.sellerid = sellerid;
-	}
 	
+
+	public int getShopcart() {
+		return shopcart;
+	}
+
+	public void setShopcart(int shopcart) {
+		this.shopcart = shopcart;
+	}
 
 	public long getItemid() {
 		return itemid;

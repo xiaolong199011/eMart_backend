@@ -18,6 +18,8 @@
 		<module>eMart_order</module>
 		<module>eMart_zuul</module>
 		<module>eMart_feign</module>
+		<module>eMart_picFile</module>
+		<module>eMart_fileInfo</module>
 	</modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>

@@ -76,6 +76,18 @@ public class BaseDao implements Repository<Object, Serializable>{
 	}
 	
 	@SuppressWarnings("unchecked")
+	public List<Object> findByTwoCondition(String conditionName1,String conditionValue1,String conditionName2,String conditionValue2) {
+		
+		String hql="FROM " + this.getClassName() +" t WHERE t."+conditionName1+" = " + "'"+conditionValue1+"'" +"and t."+conditionName2+" = " + "'"+conditionValue2+"'"; 
+		List<Object> l = this.getEm().createQuery(hql).getResultList();
+		if (null != l) {
+			return this.getEm().createQuery(hql).getResultList();
+		}
+		
+		return null;
+	}
+	
+	@SuppressWarnings("unchecked")
 	public Object findBy(long id) {
 		
 		String hql="FROM " + this.getClassName() +" t WHERE t.id = " + id; 		
@@ -86,6 +98,7 @@ public class BaseDao implements Repository<Object, Serializable>{
 		
 		return null;
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	public List<Object> findAll(int max) {

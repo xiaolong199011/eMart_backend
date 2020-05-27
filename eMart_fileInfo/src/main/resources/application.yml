@@ -1,0 +1,31 @@
+server:
+  port: 8086
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/eMart?serverTimezone=UTC
+    username: mmall
+    password: mmall
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+      dialect: org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: fileinfo-service
+
+eureka: 
+  instance: 
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 25
+    lease-expiration-duration-in-seconds: 30
+  client: 
+    serviceUrl: 
+      defaultZone: http://localhost:8081/eureka
+      
+ribbon: 
+   eureka: 
+      enabled: true
+      

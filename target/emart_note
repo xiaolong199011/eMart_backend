@@ -4,3 +4,4 @@ item:8083
 order:8082
 zuul:8084
 feign:8085
+fileinfo:8086

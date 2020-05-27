@@ -9,36 +9,33 @@ import com.eMart.controller.rest.Result;
 import com.eMart.persistence.dao.BaseDao;
 
 @Transactional
-public abstract class BaseService{
+public abstract class BaseService {
 
-
-	
 	protected abstract BaseDao getDao();
-	
+
 	public Object save(Object o) {
 		try {
 			return getDao().save(o);
 		} catch (Exception e) {
-			//e.printStackTrace();
+			// e.printStackTrace();
 			return null;
 		}
 	}
-	
+
 //	public LobCreator getLobCreator() {
 //    	return getDao().getLobCreator();
 //    }
-	
+
 	public Result delete(Object o) {
 		try {
 			getDao().delete(o);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new Result("Failed",
-					"Exception happened while deleting the object.");
+			return new Result("Failed", "Exception happened while deleting the object.");
 		}
 		return new Result("Success", "Deleted successfully");
 	}
-	
+
 	public List<Object> findAll() {
 
 		try {
@@ -48,22 +45,32 @@ public abstract class BaseService{
 			return null;
 		}
 	}
-	
+
 	public Object findBy(long id) {
 		return getDao().findBy(id);
 	}
-	
-	public List<Object> findByCondition(String conditionName,String conditionValue) {
+
+	public List<Object> findByCondition(String conditionName, String conditionValue) {
 
 		try {
-			List<Object> l = getDao().findByCondition( conditionName, conditionValue);
+			List<Object> l = getDao().findByCondition(conditionName, conditionValue);
 			return l;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-	
+
+	public List<Object> findByTwoCondition(String conditionName1,String conditionValue1,String conditionName2,String conditionValue2) {
+
+		try {
+			List<Object> l = getDao().findByTwoCondition(conditionName1, conditionValue1, conditionName2, conditionValue2);
+			return l;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 //	public List<Object> findWith(String condition) {
 //
 //		try {
@@ -74,7 +81,7 @@ public abstract class BaseService{
 //			return null;
 //		}
 //	}
-	
+
 //	@SuppressWarnings("unchecked")
 //	public Object findByCondition(String conditionName,String conditionValue) {
 //		

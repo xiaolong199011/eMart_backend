@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eMart.persistence.service.BaseService;
 import com.eMart.controller.rest.Result;
 import com.eMart.persistence.entity.Items;
+import com.eMart.persistence.model.ItemModel;
 import com.eMart.persistence.service.ItemsService;
 
 @RestController
@@ -25,7 +26,7 @@ public class RestControllerItems {
 		return itemsService;
 	}
 	
-	@RequestMapping(value = "/getall", method = RequestMethod.GET)
+	@RequestMapping(value = "/getall/", method = RequestMethod.GET)
 	public List<Object> getall() {
 		return getService().findAll();
 	}
@@ -45,6 +46,16 @@ public class RestControllerItems {
 	public Result del(@PathVariable long id) {
 		Object u = getService().findBy(id);		
 		return getService().delete(u);
+	}
+	
+	@RequestMapping(value = "/getmodel/", method = RequestMethod.GET)
+	public List<ItemModel> getmodel() {
+		return itemsService.getModel();
+	}
+	
+	@RequestMapping(value = "/getmodelby/{id}", method = RequestMethod.GET)
+	public Object getModelBy(@PathVariable long id) {
+		return itemsService.getModelBy(id);
 	}
 
 }

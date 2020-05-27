@@ -40,6 +40,12 @@ public class Items implements Serializable{
 	
 	@Column(name = "REMARKS", nullable = true)
 	private String remarks;
+	
+	@Column(name = "FILEINFOID", nullable = true)
+	private long fileinfoid;
+	
+	@Column(name = "SELLERID", nullable = true)
+	private long sellerid;
 
 	public long getId() {
 		return id;
@@ -104,4 +110,24 @@ public class Items implements Serializable{
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}
+
+	public long getFileinfoid() {
+		return fileinfoid;
+	}
+
+	public void setFileinfoid(long fileinfoid) {
+		this.fileinfoid = fileinfoid;
+	}
+
+	public long getSellerid() {
+		return sellerid;
+	}
+
+	public void setSellerid(long sellerid) {
+		this.sellerid = sellerid;
+	}
+	
+	
+	
+	
 }
