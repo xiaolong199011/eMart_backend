@@ -6,7 +6,7 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>eMart_fileInfo</artifactId>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
   <name>eMart_fileInfo</name>
   
   <dependencies>
