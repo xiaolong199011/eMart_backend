@@ -1,0 +1,5 @@
+com\eMart\cors\CorsConfig.class
+com\eMart\cors\CorsConfig$1.class
+com\eMart\App.class
+com\eMart\zuul\filter\IdentityVerificationFilter.class
+META-INF\spring-configuration-metadata.json

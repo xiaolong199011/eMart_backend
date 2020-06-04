@@ -1,0 +1,8 @@
+com\eMart\persistence\entity\RestTemplateConfig.class
+com\eMart\persistence\dao\FileInfoDao.class
+com\eMart\persistence\service\FileInfoService.class
+com\eMart\persistence\entity\FileInfo.class
+com\eMart\App.class
+com\eMart\persistence\model\Items.class
+META-INF\spring-configuration-metadata.json
+com\eMart\controller\rest\RestControllerFileInfo.class

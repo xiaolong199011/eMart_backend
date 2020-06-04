@@ -15,24 +15,24 @@ import com.eMart.App;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest (classes = App.class)
-@WebAppConfiguration
-@AutoConfigureMockMvc 
-public class OrderControllerUnitTest {
-
-	@Autowired
-	private MockMvc mvc;
-
-	@Test
-	public void purchasehistoryJunitTest() throws Exception {
-		this.mvc.perform(get("/purchasehistory/getall")).andExpect(status().isOk());
-			
-}
-	
-	@Test
-	public void transactionsJunitTest() throws Exception {
-		this.mvc.perform(get("/transactions/getall")).andExpect(status().isOk());
-			
-}
-}
+//@RunWith(SpringRunner.class)
+//@SpringBootTest (classes = App.class)
+//@WebAppConfiguration
+//@AutoConfigureMockMvc 
+//public class OrderControllerUnitTest {
+//
+//	@Autowired
+//	private MockMvc mvc;
+//
+//	@Test
+//	public void purchasehistoryJunitTest() throws Exception {
+//		this.mvc.perform(get("/purchasehistory/getall")).andExpect(status().isOk());
+//			
+//}
+//	
+//	@Test
+//	public void transactionsJunitTest() throws Exception {
+//		this.mvc.perform(get("/transactions/getall")).andExpect(status().isOk());
+//			
+//}
+//}

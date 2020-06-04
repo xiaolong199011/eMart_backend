@@ -1,0 +1,13 @@
+com\eMart\persistence\entity\Purchasehistory.class
+com\eMart\persistence\dao\TransactionsDao.class
+com\eMart\controller\rest\RestControllerTransactions.class
+com\eMart\persistence\service\TransactionsService.class
+com\eMart\persistence\dao\PurchasehistoryDao.class
+META-INF\spring-configuration-metadata.json
+com\eMart\persistence\service\PurchasehistoryService.class
+com\eMart\persistence\model\TransactionItemModel.class
+com\eMart\controller\rest\RestControllerPurchasehistory.class
+com\eMart\persistence\entity\Transactions.class
+com\eMart\persistence\model\ItemFileInfoModel.class
+com\eMart\persistence\model\RestTemplateConfig.class
+com\eMart\App.class
