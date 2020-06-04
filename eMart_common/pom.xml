@@ -9,7 +9,7 @@
   <name>eMart_common</name>
   	<version>1.0</version>
 	<packaging>jar</packaging>
-    
+    <!--  
   	    <repositories>
         <repository>
             <id>nexus-aliyun</id>
@@ -23,7 +23,7 @@
             </snapshots>
         </repository>
     </repositories>
-  
+  -->
   <dependencies>
   		<dependency>
 			<groupId>org.springframework.boot</groupId>
