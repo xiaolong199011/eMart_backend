@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>eMart_user</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>eMart_user</name>
 	<dependencies>
 		<dependency>
